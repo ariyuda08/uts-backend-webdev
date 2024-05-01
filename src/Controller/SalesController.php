@@ -10,32 +10,27 @@ class SalesController {
 
     public function getAllSales() {
         $sales = $this->salesModel->getAllSales();
-        header('Content-Type: application/json');
-        echo json_encode($sales);
+        return $sales;
     }
 
-    public function getSalesById($id) {
-        $sales = $this->salesModel->getSalesById($id);
-        header('Content-Type: application/json');
-        echo json_encode($sales);
+    public function getSalesById($saleId) {
+        $sale = $this->salesModel->getSalesById($saleId);
+        return $sale;
     }
 
-    public function addSales() {
-        $data = $_POST;
+    public function addSales($data) {
         $this->salesModel->addSales($data);
-        echo "Penjualan berhasil ditambahkan";
+        return "Penjualan berhasil ditambahkan";
     }
 
-    public function updateSales($id) {
-
-        $data = $_POST;
-        $this->salesModel->updateSales($id, $data);
-        echo "Penjualan berhasil diperbarui";
+    public function updateSales($saleId, $data) {
+        $this->salesModel->updateSales($saleId, $data);
+        return "Penjualan berhasil diperbarui";
     }
 
-    public function deleteSales($id) {
-        $this->salesModel->deleteSales($id);
-        echo "Penjualan berhasil dihapus";
+    public function deleteSales($saleId) {
+        $this->salesModel->deleteSales($saleId);
+        return "Penjualan berhasil dihapus";
     }
 }
 ?>
