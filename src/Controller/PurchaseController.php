@@ -1,4 +1,4 @@
-]<?php
+<?php
 require_once __DIR__ . '/../Model/Purchases.php';
 
 class PurchaseController {
@@ -10,27 +10,29 @@ class PurchaseController {
 
     public function getAllPurchases() {
         $purchases = $this->purchaseModel->getAllPurchases();
-        return $purchases;
+        header('Content-Type: application/json');
+        echo json_encode($purchases);
     }
 
-    public function getPurchaseById($purchaseId) {
-        $purchase = $this->purchaseModel->getPurchaseById($purchaseId);
-        return $purchase;
+    public function getPurchaseById($id) {
+        $purchase = $this->purchaseModel->getPurchaseById($id);
+        header('Content-Type: application/json');
+        echo json_encode($purchase);
     }
 
     public function addPurchase($data) {
         $this->purchaseModel->addPurchase($data);
-        return "Pembelian berhasil ditambahkan";
+        echo "Pembelian berhasil ditambahkan";
     }
 
-    public function updatePurchase($purchaseId, $data) {
-        $this->purchaseModel->updatePurchase($purchaseId, $data);
-        return "Pembelian berhasil diperbarui";
+    public function updatePurchase($id, $data) {
+        $this->purchaseModel->updatePurchase($id, $data);
+        echo "Pembelian berhasil diperbarui";
     }
 
-    public function deletePurchase($purchaseId) {
-        $this->purchaseModel->deletePurchase($purchaseId);
-        return "Pembelian berhasil dihapus";
+    public function deletePurchase($id) {
+        $this->purchaseModel->deletePurchase($id);
+        echo "Pembelian berhasil dihapus";
     }
 }
 ?>
