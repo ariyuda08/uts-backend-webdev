@@ -10,29 +10,28 @@ class CustomerController {
 
     public function getAllCustomers() {
         $customers = $this->customerModel->getAllCustomers();
-        header('Content-Type: application/json');
-        echo json_encode($customers);
+        return $customers;
     }
 
     public function getCustomerById($customerId) {
         $customer = $this->customerModel->getCustomerById($customerId);
-        header('Content-Type: application/json');
-        echo json_encode($customer);
+        return $customer;
     }
 
     public function addCustomer($data) {
         $this->customerModel->addCustomer($data);
-        echo "Customer berhasil ditambahkan";
+        return "Customer berhasil ditambahkan";
     }
 
     public function updateCustomer($customerId, $data) {
         $this->customerModel->updateCustomer($customerId, $data);
-        echo "Customer berhasil diperbarui";
+        return "Customer berhasil diperbarui";
     }
 
     public function deleteCustomer($customerId) {
         $this->customerModel->deleteCustomer($customerId);
-        echo "Customer berhasil dihapus";
+        return "Customer berhasil dihapus";
     }
 }
 ?>
+
