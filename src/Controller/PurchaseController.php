@@ -10,29 +10,27 @@ class PurchaseController {
 
     public function getAllPurchases() {
         $purchases = $this->purchaseModel->getAllPurchases();
-        header('Content-Type: application/json');
-        echo json_encode($purchases);
+        return $purchases;
     }
 
-    public function getPurchaseById($id) {
-        $purchase = $this->purchaseModel->getPurchaseById($id);
-        header('Content-Type: application/json');
-        echo json_encode($purchase);
+    public function getPurchaseById($purchaseId) {
+        $purchase = $this->purchaseModel->getPurchaseById($purchaseId);
+        return $purchase;
     }
 
     public function addPurchase($data) {
         $this->purchaseModel->addPurchase($data);
-        echo "Pembelian berhasil ditambahkan";
+        return "Pembelian berhasil ditambahkan";
     }
 
-    public function updatePurchase($id, $data) {
-        $this->purchaseModel->updatePurchase($id, $data);
-        echo "Pembelian berhasil diperbarui";
+    public function updatePurchase($purchaseId, $data) {
+        $this->purchaseModel->updatePurchase($purchaseId, $data);
+        return "Pembelian berhasil diperbarui";
     }
 
-    public function deletePurchase($id) {
-        $this->purchaseModel->deletePurchase($id);
-        echo "Pembelian berhasil dihapus";
+    public function deletePurchase($purchaseId) {
+        $this->purchaseModel->deletePurchase($purchaseId);
+        return "Pembelian berhasil dihapus";
     }
 }
 ?>
