@@ -3,7 +3,7 @@ NIM   : 220040126
 Kelas : UG224
 Matakuliah : Back-end Web Development
 
-1. Berikut ini merupakan penjelasan mengenai konfigurasi sistem pada proyek UTS Back-End Web Developer:
+1. Berikut ini merupakan penjelasan mengenai konfigurasi sistem pada proyek UTS Back-End Web Development:
 
    1. Direktori public:
 
@@ -50,7 +50,7 @@ Matakuliah : Back-end Web Development
 
    Dengan struktur file seperti ini, sistem akan diorganisir dengan baik dan memungkinkan untuk memisahkan logika sistem dari presentasi dan konfigurasi. Ini memfasilitasi pengembangan yang lebih mudah, pemeliharaan yang lebih baik, dan pengujian unit yang efisien.
 
-2. Menghadapi proyek Ulangan Tengah Semester Back-End Web Developer yang dikerjakan secara mandiri menjadi pengalaman yang sangat menantang. Berikut adalah refleksi diri terkait dengan proyek tersebut:
+2. Menghadapi proyek Ulangan Tengah Semester Back-End Web Development yang dikerjakan secara mandiri menjadi pengalaman yang sangat menantang. Berikut adalah refleksi diri terkait dengan proyek tersebut:
 
    1. Tantangan Teknis:
 
