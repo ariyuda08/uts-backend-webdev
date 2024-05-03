@@ -1,53 +1,90 @@
 # UTS Back-End Web Development
 
-## Nama  : I Gede Diva Ari Yuda
-## NIM   : 220040126
-## Kelas : UG224
-## Mata kuliah  : Back-end Web Development
+#### Nama  : I Gede Diva Ari Yuda
+#### NIM   : 220040126
+#### Kelas : UG224
+#### Mata Kuliah : Back-end Web Development
 
-### 1. Konfigurasi Sistem
+## 1. Konfigurasi Sistem
 
-#### Direktori `public`:
+### Struktur Direktori
 
-- `index.php`
-  File ini berfungsi sebagai titik masuk utama (entry point) dari proyek UTS tersebut. Di dalamnya, terdapat file `index.php` yang bertugas menerima request HTTP dan melakukan pengarahan ke bagian Controller yang sesuai. Saat ini, file `index.php` hanya berisi header yang menampilkan pesan "XYZ Sales API End Point".
+#### **Direktori `public`**:
+ - `index.php`
+   Merupakan titik masuk utama (entry point) pada website. Ketika pengguna mengakses website, file `index.php` akan menjadi file yang pertama kali dieksekusi. Tugas utamanya adalah menerima permintaan HTTP dari pengguna, memeriksa jenis permintaan (GET, POST, PUT, DELETE), dan mengarahkannya ke Controller yang sesuai untuk memproses permintaan tersebut. Namun, Saat ini, file `index.php` hanya berisi header yang menampilkan pesan "XYZ Sales API End Point".
 
-#### Direktori `src`:
+#### **Direktori `src`**:
+##### **Subdirektori `Controller`**:
+   - `CustomerController.php`
+     File ini bertanggung jawab menangani semua permintaan yang berkaitan dengan data pelanggan (customers). Tugasnya meliputi menampilkan daftar pelanggan, menambahkan pelanggan baru, memperbarui data pelanggan, dan menghapus data pelanggan. Controller ini akan berinteraksi dengan Model `Customers.php` untuk mengambil atau memanipulasi data pelanggan di database.
 
-##### Direktori `Controller`:
+   - `SalesController.php`
+     File ini bertanggung jawab menangani semua permintaan yang berkaitan dengan data penjualan (sales). Tugasnya meliputi menampilkan daftar penjualan, menambahkan data penjualan baru, memperbarui data penjualan, dan menghapus data penjualan. Controller ini akan berinteraksi dengan Model `Sales.php` untuk mengambil atau memanipulasi data penjualan di database.
 
-- `CustomerController.php`
-  Controller ini bertanggung jawab untuk menangani segala sesuatu yang berkaitan dengan entitas pelanggan (customers). Ketika sebuah permintaan HTTP diterima, `CustomerController.php` akan memproses permintaan tersebut sesuai dengan tugasnya. Misalnya, jika permintaan adalah untuk menampilkan daftar semua pelanggan, `CustomerController.php` akan berinteraksi dengan Model `Customers.php` untuk mengambil data dari database dan kemudian mengembalikan respons yang sesuai kepada pengguna.
+   - `PurchaseController.php`
+     File ini bertanggung jawab menangani semua permintaan yang berkaitan dengan data pembelian (purchases). Tugasnya meliputi menampilkan daftar pembelian, menambahkan data pembelian baru, memperbarui data pembelian, dan menghapus data pembelian. Controller ini akan berinteraksi dengan Model `Purchases.php` untuk mengambil atau memanipulasi data pembelian di database.
 
-- `SalesController.php`
-  Mirip dengan `CustomerController.php`, tetapi ditujukan untuk menangani permintaan terkait data penjualan. Ini mencakup operasi seperti menampilkan semua data penjualan, menampilkan data penjualan berdasarkan ID, menambah data penjualan baru, memperbarui data penjualan, atau menghapus data penjualan.
+##### **Subdirektori `Model`**:
+   - `Customers.php`
+     Bertanggung jawab untuk berinteraksi dengan tabel `customers` di database. Model ini berisi fungsi-fungsi untuk melakukan operasi CRUD (Create, Read, Update, Delete) pada data pelanggan, seperti:
+     - Mengambil daftar semua pelanggan
+     - Mengambil data pelanggan berdasarkan ID
+     - Menambahkan data pelanggan baru
+     - Memperbarui data pelanggan
+     - Menghapus data pelanggan
 
-- `PurchaseController.php`
-  Seperti `SalesController.php`, tetapi khusus untuk menangani permintaan terkait data pembelian. Controller ini akan menangani operasi seperti menampilkan semua data pembelian, menampilkan data pembelian berdasarkan ID, menambah data pembelian baru, memperbarui data pembelian, atau menghapus data pembelian.
+   - `Sales.php`
+     Bertanggung jawab untuk berinteraksi dengan tabel `sales` di database. Model ini berisi fungsi-fungsi untuk melakukan operasi CRUD pada data penjualan, seperti:
+     - Mengambil daftar semua penjualan
+     - Mengambil data penjualan berdasarkan ID
+     - Menambahkan data penjualan baru
+     - Memperbarui data penjualan
+     - Menghapus data penjualan
 
-##### Direktori `Model`:
+   - `Purchases.php`
+     Bertanggung jawab untuk berinteraksi dengan tabel `purchases` di database. Model ini berisi fungsi-fungsi untuk melakukan operasi CRUD pada data pembelian, seperti:
+     - Mengambil daftar semua pembelian
+     - Mengambil data pembelian berdasarkan ID
+     - Menambahkan data pembelian baru
+     - Memperbarui data pembelian
+     - Menghapus data pembelian
 
-- `Customers.php`
-  Model ini bertanggung jawab untuk berinteraksi dengan data pelanggan di dalam basis data. Ini mencakup fungsi-fungsi untuk mengambil data pelanggan, menambahkan data pelanggan baru, memperbarui data pelanggan, menghapus data pelanggan, dan lain-lain. Ketika Controller membutuhkan akses ke data pelanggan, mereka akan berkomunikasi dengan Model ini untuk melakukan operasi-operasi tersebut.
+#### **Direktori `config`**:
+   Didalamnya terdapat file `database.php` yang berisi konfigurasi untuk koneksi database. Ini mencakup informasi seperti host, nama pengguna, kata sandi, dan nama basis data (database) yang diperlukan untuk membuat koneksi ke server database. File ini digunakan oleh Model untuk membuat koneksi ke database dan melakukan operasi CRUD. Contohnya adalah sebagai berikut:
 
-- `Sales.php`
-  Model untuk mengelola data penjualan. Seperti `Customers.php`, tetapi khusus untuk berinteraksi dengan data penjualan. Ini berisi fungsi-fungsi untuk operasi CRUD terhadap data penjualan, seperti mengambil data penjualan, menambah data penjualan, memperbarui data penjualan, dan menghapus data penjualan.
+   ```php
+   define('DB_HOST', 'localhost');
+   define('DB_NAME', 'db_xyz');
+   define('DB_USER', 'admintugas');
+   define('DB_PASS', 'ug224');
+   ```
 
-- `Purchases.php`
-  Model untuk mengelola data pembelian. Sama seperti `Sales.php`, tetapi ditujukan untuk berinteraksi dengan data pembelian. Ini berisi fungsi-fungsi untuk mengambil data pembelian, menambah data pembelian, memperbarui data pembelian, dan menghapus data pembelian.
+   Keterangan:
+   - `DB_HOST`: Alamat host database (misalnya, `localhost`).
+   - `DB_NAME`: Nama database yang akan digunakan (misalnya, `db_xyz`).
+   - `DB_USER`: Nama pengguna untuk mengakses database.
+   - `DB_PASS`: Kata sandi pengguna untuk mengakses database.
 
-Dengan pemisahan yang jelas antara Direktori Controller dan Model, sistem menjadi lebih terstruktur dan lebih mudah untuk dimengerti dan dikelola. Controller bertanggung jawab untuk menangani logika sistem dan permintaan pengguna, sementara Model bertanggung jawab untuk berinteraksi dengan data di dalam basis data. Ini memungkinkan untuk melakukan perubahan pada logika sistem tanpa harus memodifikasi Model, maupun sebaliknya.
+### Alur Kerja Sistem
 
-#### Direktori `config`:
+1. Ketika pengguna mengakses aplikasi melalui browser atau klien HTTP lainnya, permintaan HTTP akan diterima oleh `index.php` di direktori `public`.
+2. `index.php` akan memeriksa jenis permintaan HTTP (GET, POST, PUT, DELETE) dan rute yang diminta (misalnya, `/customers`, `/sales`, `/purchases`).
+3. Berdasarkan jenis permintaan dan rute yang diminta, `index.php` akan mengarahkan permintaan tersebut ke Controller yang sesuai, seperti:
+   - Permintaan terkait pelanggan akan diarahkan ke `CustomerController.php`
+   - Permintaan terkait penjualan akan diarahkan ke `SalesController.php`
+   - Permintaan terkait pembelian akan diarahkan ke `PurchaseController.php`
+4. Controller yang sesuai akan memproses permintaan tersebut, seperti:
+   - Jika permintaan adalah untuk menampilkan daftar pelanggan, `CustomerController.php` akan memanggil fungsi yang sesuai di `Customers.php` (Model) untuk mengambil data pelanggan dari database.
+   - Jika permintaan adalah untuk menambahkan data penjualan baru, `SalesController.php` akan memanggil fungsi yang sesuai di `Sales.php` (Model) untuk menyimpan data penjualan ke database.
+   - Jika permintaan adalah untuk memperbarui data pembelian, `PurchaseController.php` akan memanggil fungsi yang sesuai di `Purchases.php` (Model) untuk mengupdate data pembelian di database.
+5. Model (`Customers.php`, `Sales.php`, atau `Purchases.php`) akan membuat koneksi ke database menggunakan konfigurasi yang terdapat di `config/database.php`.
+6. Setelah data diperoleh atau dimanipulasi di database, Controller akan mengembalikan respons yang sesuai kepada pengguna yang melakukan permintaan.
 
-- `database.php`
-  File ini berisi konfigurasi untuk koneksi database. Ini mencakup informasi seperti host, nama pengguna, kata sandi, dan nama basis data yang diperlukan untuk membuat koneksi ke server database. File ini digunakan oleh Model untuk membuat koneksi ke database dan melakukan operasi CRUD.
+Dengan konfigurasi sistem yang terstruktur dengan baik, seperti penataan direktori dan file yang terorganisir dengan jelas, serta alur kerja yang mudah dipahami, Website ini diharapkan dapat memberikan layanan yang handal kepada pengguna. Sehingga, pengguna dapat dengan mudah berinteraksi dengan Website ini melalui browser atau perangkat lainnya, dan sistem akan merespons dengan cepat dan akurat terhadap setiap permintaan yang diterima. Selain itu, pengaturan yang terstruktur juga membantu menjaga keamanan serta keutuhan data saat proses CRUD dilakukan, sehingga pengguna dapat merasa aman dalam menggunakan Website ini untuk kebutuhan bisnis atau aktivitas lainnya. Dengan semua komponen yang terkoneksi dengan baik, Website ini siap untuk membantu mempermudah dan meningkatkan efisiensi dalam pengelolaan data pelanggan, penjualan, dan pembelian.
 
-Dengan struktur file seperti ini, sistem akan diorganisir dengan baik dan memungkinkan untuk memisahkan logika sistem dari presentasi dan konfigurasi. Ini memfasilitasi pengembangan yang lebih mudah, pemeliharaan yang lebih baik, dan pengujian unit yang efisien.
+## 2. Refleksi Diri
 
-### 2. Refleksi Diri
-
-Menghadapi proyek Ulangan Tengah Semester Back-End Web Development yang dikerjakan secara mandiri menjadi pengalaman yang sangat menantang. Berikut adalah refleksi diri terkait dengan proyek tersebut:
+Menghadapi proyek Ulangan Tengah Semester Back-end Web Development yang dikerjakan secara mandiri menjadi pengalaman yang sangat menantang untuk diri Saya. Berikut adalah refleksi diri terkait dengan proyek tersebut:
 
 1. **Tantangan Teknis:**
    - Saya mengalami tantangan yang sangat besar dalam memahami konsep-konsep yang kompleks dalam proyek UTS Back-End ini, seperti pemrosesan data dari database, manajemen koneksi, atau penggunaan PDO.
@@ -61,4 +98,4 @@ Menghadapi proyek Ulangan Tengah Semester Back-End Web Development yang dikerjak
    - Ini merupakan proyek back-end pertama Saya, tentunya Saya mengalami kesulitan untuk memahami konsep-konsep dasar dan mengimplementasikannya dalam proyek ini dengan benar.
    - **Cara Mengatasinya:** Mempelajari dasar-dasar pengembangan back-end, seperti bahasa pemrograman PHP, konsep database, dan operasi CRUD. Selanjutnya, mempraktekkan konsep-konsep tersebut dengan membuat proyek-proyek kecil atau mengikuti tutorial online. Dengan berlatih secara konsisten, tentunya akan membuat Kita semakin terampil dalam pengembangan back-end.
 
-Dengan kesabaran, ketekunan, dan kemauan untuk terus belajar, Saya dapat mengatasi tantangan dan kesulitan yang Saya hadapi dalam proyek ini. Walaupun hasilnya masih belum sempurna, tapi ingatlah bahwa setiap kesalahan atau rintangan adalah kesempatan untuk belajar dan meningkatkan kemampuan Kita sebagai pengembang web.
+Dengan kesabaran, ketekunan, dan kemauan untuk terus belajar, Saya dapat mengatasi tantangan dan kesulitan yang Saya hadapi dalam proyek ini. Walaupun hasilnya masih belum sempurna, tapi ingatlah bahwa setiap kesalahan atau rintangan adalah kesempatan untuk belajar dan meningkatkan kemampuan Kita sebagai pengembang website.
