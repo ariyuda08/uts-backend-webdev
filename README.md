@@ -10,7 +10,7 @@
 #### Direktori `public`:
 
 - `index.php`
-  File ini berfungsi sebagai titik masuk utama (entry point) dari website. Di dalamnya, terdapat file `index.php` yang bertugas menerima request HTTP dan melakukan pengarahan ke bagian Controller yang sesuai. Saat ini, file `index.php` hanya berisi header yang menampilkan pesan "XYZ Sales API End Point".
+  File ini berfungsi sebagai titik masuk utama (entry point) dari proyek UTS tersebut. Di dalamnya, terdapat file `index.php` yang bertugas menerima request HTTP dan melakukan pengarahan ke bagian Controller yang sesuai. Saat ini, file `index.php` hanya berisi header yang menampilkan pesan "XYZ Sales API End Point".
 
 #### Direktori `src`:
 
@@ -50,15 +50,15 @@ Dengan struktur file seperti ini, sistem akan diorganisir dengan baik dan memung
 Menghadapi proyek Ulangan Tengah Semester Back-End Web Development yang dikerjakan secara mandiri menjadi pengalaman yang sangat menantang. Berikut adalah refleksi diri terkait dengan proyek tersebut:
 
 1. **Tantangan Teknis:**
-   - Saya mengalami tantangan yang sangat besar dalam memahami konsep-konsep yang lebih kompleks dalam pengembangan back-end, seperti pemrosesan data dari database, manajemen koneksi, atau penggunaan PDO.
-   - **Cara Mengatasinya:** Perlu untuk memperdalam pemahaman terhadap konsep-konsep tersebut dengan membaca dokumentasi, menonton tutorial online dari platform Youtube, atau mencari sumber belajar lainnya.
+   - Saya mengalami tantangan yang sangat besar dalam memahami konsep-konsep yang kompleks dalam proyek UTS Back-End ini, seperti pemrosesan data dari database, manajemen koneksi, atau penggunaan PDO.
+   - **Cara Mengatasinya:** Perlu untuk memperdalam pemahaman terhadap konsep-konsep tersebut dengan membaca dokumentasi, menonton tutorial online dari platform Youtube, serta mencari sumber belajar lainnya.
 
 2. **Manajemen Waktu:**
    - Kesulitan untuk mengatur waktu dengan efisien antara pekerjaan lain, tugas kuliah, dan proyek ini.
    - **Cara Mengatasinya:** Membuat jadwal yang jelas dan realistis, serta mengalokasikan waktu secara proporsional untuk setiap tugas. Prioritaskan tugas-tugas yang penting dan putuskan untuk menyelesaikan proyek ini secara bertahap agar tidak terlalu menumpuk di akhir.
 
 3. **Belum Pernah Mendapatkan Proyek Serupa:**
-   - Ini merupakan proyek back-end pertama Saya, mengalami kesulitan untuk memahami konsep-konsep dasar dan mengimplementasikannya dengan benar.
-   - **Cara Mengatasinya:** Mempelajari dasar-dasar pengembangan back-end, seperti bahasa pemrograman PHP, konsep database, dan operasi CRUD. Selanjutnya, mempraktekkan konsep-konsep tersebut dengan membuat proyek-proyek kecil atau mengikuti tutorial online. Dengan berlatih secara konsisten, tentunya akan membuat kita semakin terampil dalam pengembangan back-end.
+   - Ini merupakan proyek back-end pertama Saya, tentunya Saya mengalami kesulitan untuk memahami konsep-konsep dasar dan mengimplementasikannya dalam proyek ini dengan benar.
+   - **Cara Mengatasinya:** Mempelajari dasar-dasar pengembangan back-end, seperti bahasa pemrograman PHP, konsep database, dan operasi CRUD. Selanjutnya, mempraktekkan konsep-konsep tersebut dengan membuat proyek-proyek kecil atau mengikuti tutorial online. Dengan berlatih secara konsisten, tentunya akan membuat Kita semakin terampil dalam pengembangan back-end.
 
-Dengan kesabaran, ketekunan, dan kemauan untuk terus belajar, Saya dapat mengatasi tantangan dan kesulitan yang saya hadapi dalam proyek ini. Walaupun hasilnya masih belum sempurna, tapi ingatlah bahwa setiap kesalahan atau rintangan adalah kesempatan untuk belajar dan meningkatkan kemampuan Kita sebagai pengembang web.
+Dengan kesabaran, ketekunan, dan kemauan untuk terus belajar, Saya dapat mengatasi tantangan dan kesulitan yang Saya hadapi dalam proyek ini. Walaupun hasilnya masih belum sempurna, tapi ingatlah bahwa setiap kesalahan atau rintangan adalah kesempatan untuk belajar dan meningkatkan kemampuan Kita sebagai pengembang web.
