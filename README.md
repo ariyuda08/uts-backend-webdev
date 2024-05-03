@@ -3,7 +3,7 @@
 ## Nama  : I Gede Diva Ari Yuda
 ## NIM   : 220040126
 ## Kelas : UG224
-## Matakuliah  : Back-end Web Development
+## Mata kuliah  : Back-end Web Development
 
 ### 1. Konfigurasi Sistem
 
